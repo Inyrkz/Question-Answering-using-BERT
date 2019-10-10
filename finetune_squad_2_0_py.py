@@ -1,19 +1,19 @@
 #Let's import our libraries
 import numpy as np
 import pandas as pd
+import zipfile
+from matplotlib import pyplot as plt
+# %matplotlib inline
+import sys
+import datetime
 
+#mounting google drive to colab
 from google.colab import drive
 drive.mount('/content/drive')
 
 import os
 print(os.listdir("/content/drive/My Drive/SQuAD JSON-v2.0"))
 
-# Commented out IPython magic to ensure Python compatibility.
-import zipfile
-from matplotlib import pyplot as plt
-# %matplotlib inline
-import sys
-import datetime
 
 !wget https://storage.googleapis.com/bert_models/2018_10_18/uncased_L-12_H-768_A-12.zip
 
