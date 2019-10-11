@@ -63,7 +63,7 @@ print(f'***** BERT pretrained directory: {BERT_PRETRAINED_DIR} *****')
 --vocab_file=model_repo/uncased_L-24_H-1024_A-16/vocab.txt \
 --bert_config_file=model_repo/uncased_L-24_H-1024_A-16/bert_config.json \
 --init_checkpoint=model_repo/uncased_L-24_H-1024_A-16/bert_model.ckpt \
---do_train=False \
+--do_train=True \
 --train_file=train-v2.0.json \
 --do_predict=True \
 --predict_file=dev-v2.0.json \
