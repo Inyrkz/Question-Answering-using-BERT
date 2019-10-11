@@ -73,6 +73,6 @@ print(f'***** BERT pretrained directory: {BERT_PRETRAINED_DIR} *****')
 --max_seq_length=384 \
 --doc_stride=128 \
 --version_2_with_negative=True \
---output_dir=/tmp/squad_large/
+--output_dir=/content/output/
 
 #python evaluate-v2.0.py dev-v2.0.json ./squad/predictions.json --na-prob-file ./squad/null_odds.json
