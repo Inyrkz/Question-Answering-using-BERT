@@ -2,8 +2,6 @@
 import numpy as np
 import pandas as pd
 import zipfile
-from matplotlib import pyplot as plt
-%matplotlib inline
 import sys
 import datetime
 import os
