@@ -14,13 +14,12 @@ To achieve finetuning of BERT on SQUAD 2.0 we used BERT-Large, Uncased (Whole Wo
 The implementation is documented in https://github.com/Inyrkz/Question-Answering-using-BERT/blob/master/Fine_tuning_BERT%202.ipynb
 Using Colob Notebook, we importing the appropriate libraries 
 ```bash
-import pandas as pd
-import numpy as np
 import zipfile
 import os
-pip install wget
-import wget
 import shutil
+import pandas as pd
+import numpy as np
+import wget
 
 ```
 We mounted the drive containing our dev2.0.json and train2.0.json datasets needed
