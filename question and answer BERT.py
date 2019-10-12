@@ -20,9 +20,9 @@ dir( 'model_repo/uncased_L-12_H-768_A-12')
 dir( 'model_repo')
 
 wget.download('https://raw.githubusercontent.com/google-research/bert/master/modeling.py')
-wget.download(' https://raw.githubusercontent.com/google-research/bert/master/optimization.py') 
-wget.download(' https://raw.githubusercontent.com/google-research/bert/master/run_squad.py ')
-wget.download(' https://raw.githubusercontent.com/google-research/bert/master/tokenization.py')
+wget.download('https://raw.githubusercontent.com/google-research/bert/master/run_squad.py')
+wget.download('https://raw.githubusercontent.com/google-research/bert/master/tokenization.py')
+wget.download('https://raw.githubusercontent.com/google-research/bert/master/optimization.py') 
 
 BERT_MODEL = 'uncased_L-12_H-768_A-12'
 BERT_PRETRAINED_DIR = f'{repo}/uncased_L-12_H-768_A-12'
@@ -30,16 +30,16 @@ OUTPUT_DIR = f'{repo}/outputs'
 print(f'***** Model output directory: {OUTPUT_DIR} *****')
 print(f'***** BERT pretrained directory: {BERT_PRETRAINED_DIR} *****')
 
-wget.download(' https://rajpurkar.github.io/SQuAD-explorer/dataset/train-v2.0.json')
-wget.download(' https://rajpurkar.github.io/SQuAD-explorer/dataset/dev-v2.0.json')
-wget.download(' https://worksheets.codalab.org/rest/bundles/0x6b567e1cf2e041ec80d7098f031c5c9e/contents/blob/')
+wget.download('https://rajpurkar.github.io/SQuAD-explorer/dataset/train-v2.0.json')
+wget.download('https://rajpurkar.github.io/SQuAD-explorer/dataset/dev-v2.0.json')
+wget.download('https://worksheets.codalab.org/rest/bundles/0x6b567e1cf2e041ec80d7098f031c5c9e/contents/blob/')
 
 dir()
 
-shutil.move('evaluate-v2.0.py',index.html)
+!move index.html 'evaluate-v2.0.py'
 dir('model_repo/uncased_L-12_H-768_A-12')
 
-mkdir (output)
+os.mkdir('output')
 
 !python run_squad.py \
 --vocab_file=model_repo/uncased_L-12_H-768_A-12/vocab.txt \
@@ -56,4 +56,6 @@ mkdir (output)
 --doc_stride=128 \
 --version_2_with_negative=True \
 --output_dir=/content/output
+
+
 
