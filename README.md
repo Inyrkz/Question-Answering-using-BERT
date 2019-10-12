@@ -32,15 +32,14 @@ print(os.listdir("/content/drive/My Drive/SQuAD JSON-v2.0"))
 
 We downloaded the BERT pretrained model needed for our finetuning, we were also provided with some python files to help run our model, files like modeling.py, optimization.py, run_squad.py, tokenization.py which were all downloaded from https://github.com/google-research/bert using the Wget method
 ```bash
-url= 'https://storage.googleapis.com/bert_models/2018_10_18/uncased_L-24_H-1024_A-16.zip'
-filename = wget.download(url)
+URL= 'https://storage.googleapis.com/bert_models/2018_10_18/uncased_L-24_H-1024_A-16.zip'
+filename = wget.download(URL)
 
 REPO = 'model_repo'
 with zipfile.ZipFile("uncased_L-24_H-1024_A-16.zip","r") as zip_ref:
     zip_ref.extractall(REPO)
     
- !dir 'model_repo/uncased_L-24_H-1024_A-16'
- !dir 'model_repo'
+os.listdir('model_repo/uncased_L-24_H-1024_A-16')
  
 URL1= 'https://raw.githubusercontent.com/google-research/bert/master/modeling.py'
 URL2= 'https://raw.githubusercontent.com/google-research/bert/master/optimization.py'
@@ -69,7 +68,7 @@ URL7= 'https://worksheets.codalab.org/rest/bundles/0x6b567e1cf2e041ec80d7098f031
 FILENAME5 = wget.download(URL5)
 FILENAME6 = wget.download(URL6)
 FILENAME7 = wget.download(URL7)
-!dir
+os.listdir()
 ```
 
 Next we run the run_squad.py file with the training set and test set of SQUAD 2.0 using the parameters
