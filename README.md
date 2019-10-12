@@ -18,9 +18,10 @@ import pandas as pd
 import numpy as np
 import zipfile
 import os
+pip install wget
 import wget
 import shutil
-pip install wget
+
 ```
 We mounted the drive containing our dev2.0.json and train2.0.json datasets needed
 ```bash
@@ -41,10 +42,14 @@ with zipfile.ZipFile("uncased_L-24_H-1024_A-16.zip","r") as zip_ref:
  !dir 'model_repo/uncased_L-24_H-1024_A-16'
  !dir 'model_repo'
  
-!wget https://raw.githubusercontent.com/google-research/bert/master/modeling.py 
-!wget https://raw.githubusercontent.com/google-research/bert/master/optimization.py 
-!wget https://raw.githubusercontent.com/google-research/bert/master/run_squad.py 
-!wget https://raw.githubusercontent.com/google-research/bert/master/tokenization.py
+URL1= 'https://raw.githubusercontent.com/google-research/bert/master/modeling.py'
+URL2= 'https://raw.githubusercontent.com/google-research/bert/master/optimization.py'
+URL3= 'https://raw.githubusercontent.com/google-research/bert/master/run_squad.py'
+URL4= 'https://raw.githubusercontent.com/google-research/bert/master/tokenization.py'
+FILENAME1 = wget.download(URL1)
+FILENAME2 = wget.download(URL2)
+FILENAME3 = wget.download(URL3)
+FILENAME4 = wget.download(URL4)
 ````
 
 Next we created an output directory for our output
@@ -58,9 +63,12 @@ print(f'***** BERT pretrained directory: {BERT_PRETRAINED_DIR} *****')
 
 We downloaded other needed files for our training using 
 ```bash
-!wget https://rajpurkar.github.io/SQuAD-explorer/dataset/train-v2.0.json
-!wget https://rajpurkar.github.io/SQuAD-explorer/dataset/dev-v2.0.json
-!wget https://worksheets.codalab.org/rest/bundles/0x6b567e1cf2e041ec80d7098f031c5c9e/contents/blob/
+URL5= 'https://rajpurkar.github.io/SQuAD-explorer/dataset/train-v2.0.json'
+URL6= 'https://rajpurkar.github.io/SQuAD-explorer/dataset/dev-v2.0.json'
+URL7= 'https://worksheets.codalab.org/rest/bundles/0x6b567e1cf2e041ec80d7098f031c5c9e/contents/blob/'
+FILENAME5 = wget.download(URL5)
+FILENAME6 = wget.download(URL6)
+FILENAME7 = wget.download(URL7)
 !dir
 ```
 
