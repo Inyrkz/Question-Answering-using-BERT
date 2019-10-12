@@ -16,6 +16,7 @@ import wget
 #mounting google drive to colab
 from google.colab import drive
 drive.mount('/content/drive')
+
 #print(os.listdir("/content/drive/My Drive/SQuAD JSON-v2.0"))
 print(os.listdir("/content/drive/My Drive/Mydataset/SQuAD JSON-v2.0"))
 
@@ -72,22 +73,22 @@ os.mkdir('output')
 
 #Code to run the run_squad.py file with training set and test set of SQuAD 2.0
 !python3 run_squad.py \
---vocab_file=model_repo/uncased_L-24_H-1024_A-16/vocab.txt \
---bert_config_file=model_repo/uncased_L-24_H-1024_A-16/bert_config.json \
---init_checkpoint=model_repo/uncased_L-24_H-1024_A-16/bert_model.ckpt \
---do_train=True \
---train_file=train-v2.0.json \
---do_predict=True \
---predict_file=dev-v2.0.json \
---train_batch_size=24 \
---learning_rate=3e-5 \
---num_train_epochs=2.0 \
---max_seq_length=384 \
---doc_stride=128 \
---version_2_with_negative=True \
---output_dir=/content/output
-#--use_tpu=True \
-#--tpu_name=v2-128 \
+--vocab_file = model_repo/uncased_L-24_H-1024_A-16/vocab.txt \
+--bert_config_file = model_repo/uncased_L-24_H-1024_A-16/bert_config.json \
+--init_checkpoint = model_repo/uncased_L-24_H-1024_A-16/bert_model.ckpt \
+--do_train = True \
+--train_file = train-v2.0.json \
+--do_predict = True \
+--predict_file = dev-v2.0.json \
+--train_batch_size = 24 \
+--learning_rate = 3e-5 \
+--num_train_epochs = 2.0 \
+--max_seq_length = 384 \
+--doc_stride = 128 \
+--version_2_with_negative = True \
+--output_dir = /content/output
+#--use_tpu = True \
+#--tpu_name = v2-128 \
 
 #Code to run evaluate-v2.0 to get f1 score
 !python3 evaluate-v2.0.py \
@@ -95,19 +96,19 @@ dev-v2.0.json pred.json
 
 #Code to run the run_squad.py file with predicting set and test set of SQuAD 2.0
 !python3 run_squad.py \
---vocab_file=model_repo/uncased_L-24_H-1024_A-16/vocab.txt \
---bert_config_file=model_repo/uncased_L-24_H-1024_A-16/bert_config.json \
---init_checkpoint=model_repo/uncased_L-24_H-1024_A-16/bert_model.ckpt \
---do_train=False \
---train_file=train-v2.0.json \
---do_predict=True \
---predict_file=dev-v2.0.json \
---train_batch_size=24 \
---learning_rate=3e-5 \
---num_train_epochs=2.0 \
---max_seq_length=384 \
---doc_stride=128 \
---version_2_with_negative=True \
---output_dir=/content/output
-#--use_tpu=True \
-#--tpu_name=v2-128 \
+--vocab_file = model_repo/uncased_L-24_H-1024_A-16/vocab.txt \
+--bert_config_file = model_repo/uncased_L-24_H-1024_A-16/bert_config.json \
+--init_checkpoint = model_repo/uncased_L-24_H-1024_A-16/bert_model.ckpt \
+--do_train = False \
+--train_file = train-v2.0.json \
+--do_predict = True \
+--predict_file = dev-v2.0.json \
+--train_batch_size = 24 \
+--learning_rate = 3e-5 \
+--num_train_epochs = 2.0 \
+--max_seq_length = 384 \
+--doc_stride = 128 \
+--version_2_with_negative = True \
+--output_dir = /content/output
+#--use_tpu = True \
+#--tpu_name = v2-128 \
